@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сайт диетолога</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="cover">
+        <div class="cover__filter"></div>
+        <div style="position: relative; z-index: 1; text-align: center;">
+            <h1 class="main-title">AMDIET</h1>
+            <p class="disc">Amdiet - сервис для подбора идеальной диеты именно для Вас!</p>
+            <a href="#form" class="btn">Записаться на прием</a>
+        </div>
+        <div class="buttons-container">
+            <button onclick="location.href='reg/log-doc.html'" class="btn-log">Вход для врача</button>
+            <button onclick="location.href='reg/log-patient.html'" class="btn-log">Вход для пациента</button>
+        </div>
+    </div>
+
+    <section class="services">
+        <h2>Что предлагает наш сервис?</h2>
+        <p class="service">Сервис AmDiet предназначен для облегченного процесса мониторинга диеты.<br>
+         В использовании все предельно просто! Укажите свои данные и получите <br>
+         детальный расчет подходящей именно вам диеты!
+        </p>
+        <div>
+            <h3>Удобство</h3>
+            <p class="service">Сервис располагается прямо здесь. <br> У Вас будет постоянный доступ к ресурсу
+                и его функциям. Пару кликов и все готово! </p>
+            <h3>Качество услуг и рекомендаций</h3>
+            <p  class="service">Все услуги и рекомендации прошли проверку профессиональных <br>
+                специалистов в области диетологии!  Ваше здоровье важно для нас! </p>
+            <h3>Чат с врачом</h3>
+            <p  class="service">Удобный и доступный чат непосредственно с врачом! </p>
+            <h3>Красота</h3>
+            <p  class="service">Понятный и красивый интерфейс!</p>
+            <h2>Запишитесь на консультацию к специалисту!</h2>
+
+            <form id="form" class="contact-form" onsubmit="submitForm(event)">
+                <input type="email" name="email" placeholder="E-mail" class="form-info" required>
+                <input type="text" name="name" placeholder="ФИО" class="form-info" required>
+                <input type="tel" name="phone" placeholder="Телефон" class="form-info" required>
+                <button type="submit" class="btn">Отправить</button>
+            </form>
+            <div id="responseMessage"></div> <!-- Место для отображения сообщения -->
+        </div>
+    </section>
+     
+    <footer class="contact">
+        <div class="contact-info">
+            <h2>Контакты</h2>
+            <p>Телефон: +9373297917</p>
+            <p>Email: 1@gmail.com</p>
+        </div>
+        <div class="map-container">
+            <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2305.4687077985095!2d55.99566957637058!3d54.70137647248143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x43d93bbe7127bb2b%3A0xf13afdad0440c162!2z0YPQuy4g0JzRg9Cx0LDRgNGP0LrQvtCy0LAsIDExLzMsINCj0YTQsCwg0KDQtdGB0L8uINCR0LDRiNC60L7RgNGC0L7RgdGC0LDQvSwgNDUwMDky!5e0!3m2!1sru!2sru!4v1732521348432!5m2!1sru!2sru" 
+                width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </footer>
+    <script>
+        function submitForm(event) {
+            event.preventDefault(); // Предотвращаем стандартное поведение формы
+        
+            var formData = new FormData(document.getElementById("form")); // Получаем данные формы
+        
+            // Отправляем данные через AJAX
+            fetch('submit.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                // Отображаем ответ на странице
+                document.getElementById('responseMessage').innerText = data;
+            })
+            .catch(error => console.error('Ошибка:', error));
+        }
+    </script>
+</body>
+</html>
