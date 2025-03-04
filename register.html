@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="reg-style.css">
+</head>
+<body>
+    <div class="cover">
+        <div class="cover__filter"></div>
+        <div class="login-form-container">
+            <h1 class="main-title">AMDIET</h1>
+            <p class="disc">Создайте аккаунт, чтобы начать!</p>
+            <form class="login-form" id="register-form" onsubmit="submitRegisterForm(event)">
+                <input type="email" name="email" placeholder="E-mail" class="reg-info" required>
+                <input type="text" name="name" placeholder="Имя" class="reg-info" required>
+                <input type="password" name="password" placeholder="Пароль" class="reg-info" required>
+                <button type="submit" class="reg-btn">Зарегистрироваться</button>
+            </form>
+            <p class="register-link">Уже есть аккаунт? <a href="log-patient.html" class="btn">Войти</a></p>
+            <div id="responseMessage"></div> <!-- Блок для сообщений -->
+        </div>
+    </div>
+
+    <script>
+        function submitRegisterForm(event) {
+            event.preventDefault(); // предотвращаем стандартное поведение формы
+
+            var formData = new FormData(document.getElementById("register-form")); // получаем данные формы
+
+            // отправляем данные через AJAX
+            fetch('register.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                // отображаем ответ на странице
+                document.getElementById('responseMessage').innerText = data;
+            })
+            .catch(error => console.error('Ошибка:', error));
+        }
+    </script>
+</body>
+</html>

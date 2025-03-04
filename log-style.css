@@ -1,0 +1,72 @@
+.login-form-container {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 400px; /* Максимальная ширина формы входа */
+    margin: auto; /* Центрирование формы на странице */
+}
+
+.login-form {
+    background-color: #ffffff; /* Цвет фона формы */
+    border-radius: 10px; /* Закругленные углы */
+    padding: 20px; /* Отступы внутри формы */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Тень для глубины */
+    max-width: 400px; /* Максимальная ширина формы */
+    margin: 20px auto; /* Центрирование формы */
+    margin-top: 50px;
+}
+
+.login-form input {
+    width: 100%; /* Ширина полей ввода */
+    padding: 10px; /* Отступы внутри полей */
+    border: 1px solid #ddd; /* Цвет рамки */
+    border-radius: 5px; /* Закругленные углы полей */
+    margin-bottom: 15px; /* Отступ между полями */
+    font-size: 16px; /* Размер шрифта */
+    transition: border-color 0.3s; /* Плавный переход для рамки */
+}
+.login-form input:focus{
+    border-color: #ff0000; /* Цвет рамки при фокусе */
+    outline: none; /* Убираем стандартную рамку при фокусе */
+}
+
+.reg-btn
+{
+    width: 100%; /* Кнопка занимает всю ширину формы */
+    padding: 12px; /* Увеличенные отступы для кнопки */
+    margin-top: 20px;
+    background-color: #ff0000;
+    color: white;
+    border-radius: 30px;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s;
+    padding: 15px 30px;
+    border: none;
+    font-size: 18px;
+}
+.reg-btn:hover {
+    background-color: #ffffff;
+    color: #2971f5;
+}
+.register-link {
+    margin-top: 20px; /* Отступ сверху */
+}
+
+.reg-info{
+    width: 100%; /* Поля ввода занимают всю ширину */
+    padding: 10px; /* Отступы внутри полей */
+    border: 1px solid #ddd; /* Цвет рамки */
+    border-radius: 5px; /* Закругленные углы */
+    margin-bottom: 15px; /* Отступ между полями */
+    margin-right: 10px; /* Отступ справа */
+    box-sizing: border-box; /* Учитываем отступы и границы в ширине */
+}
+.register-link a {
+    color: #ff0000; /* Цвет ссылки */
+    text-decoration: none; /* Убираем подчеркивание */
+}

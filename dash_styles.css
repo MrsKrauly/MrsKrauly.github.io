@@ -1,0 +1,153 @@
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+header {
+    background-color: #292929;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.upload-section {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.image-preview {
+    margin-top: 15px;
+}
+
+main {
+    padding: 20px;
+}
+
+.profile, .appointments, .settings {
+    max-width: 800px; /* Максимальная ширина всего профиля */
+    margin: 20px auto; /* Центровка относительно экрана */
+    padding: 20px; /* Отступы внутри профиля */
+    background-color: #f9f9f9; /* Светлый фон для контраста */
+    border-radius: 10px; /* Закругленные углы */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Тень для глубины */
+}
+
+h2 {
+    margin-top: 0;
+}
+
+.btn {
+    background-color: #ff0000;  /* Цвет фона */
+    color: white;                /* Цвет текста */
+    border: none;                /* Убираем обводку */
+    border-radius: 5px;         /* Немного округленные углы */
+    padding: 12px 25px;         /* Отступы для кнопки */
+    font-size: 16px;            /* Размер шрифта */
+    text-decoration: none;       /* Убираем подчеркивание ссылок */
+    transition: background-color 0.2s, color 0.2s; /* Плавный переход фона и цвета */
+}
+
+.btn:hover {
+    background-color: #e60000;  /* Цвет фона при наведении (можно изменить на любой другой) */
+    color: #ffffff;              /* Цвет текста при наведении */
+}
+
+
+footer {
+    background-color: #292929;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.profile {
+    max-width: 800px; /* Максимальная ширина всего профиля */
+    margin: 20px auto; /* Центровка относительно экрана */
+    padding: 20px; /* Отступы внутри профиля */
+    background-color: #f9f9f9; /* Светлый фон для контраста */
+    border-radius: 10px; /* Закругленные углы */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Тень для глубины */
+}
+.user-details{
+    margin-left: 60px;
+}
+.profile-info {
+    display: flex; /* Используем flexbox для управления расположением */
+    align-items: center; /* Центрируем элементы по вертикали */
+}
+
+.profile-photo {
+    width: 150px; /* Ширина фотографии */
+    height: 150px; /* Высота фотографии */
+    border-radius: 50%; /* Закругление для круглой формы */
+    object-fit: cover; /* Обрезка изображения по форме */
+    border: 2px solid #ddd; /* Рамка вокруг фотографии */
+    margin-right: 20px; /* Отступ справа от фотографии */
+}
+
+.upload-section {
+    display: flex; /* Используем flexbox для выравнивания элементов */
+    flex-direction: column; /* Располагаем элементы в колонку */
+    align-items: flex-start; /* Выравниваем элементы по левому краю */
+    margin-top: 0;
+     /* Отступы для секции */
+}
+
+
+.image-preview {
+    margin-top: 10px; /* Отступ сверху для предварительного просмотра */
+}
+
+.small-title {
+    font-size: 12px; /* Меньший размер шрифта для заголовка */
+    margin-top: 10px; /* Отступ сверху */
+}
+
+.file-input {
+    display: block; /* Отображение блока для управления размерами */
+    border-radius: 5px; /* Закругленные углы */
+    width: 100%; /* Ширина поля ввода файла */
+    max-width: 250px; /* Максимальная ширина */
+    font-size: 12px; /* Размер шрифта */
+    cursor: pointer; /* Курсор указывает на возможность выбора */
+    margin-bottom: 10px; /* Отступ снизу для поля загрузки */
+}
+
+/* Стили для стилизации, когда файл выбран (опционально) */
+.file-input:focus {
+    border-color: #ff0000; /* Цвет рамки при фокусе */
+    outline: none; /* Убираем стандартную рамку при фокусе */
+}
+.icon-options {
+    display: flex;
+    gap: 15px; /* Отступы между иконками */
+    margin-top: 10px;
+}
+
+.icon {
+    cursor: pointer;
+    width: 50px; /* Ширина иконок */
+    height: 50px; /* Высота иконок */
+    border: 2px solid transparent; /* Граница по умолчанию */
+    border-radius: 25px; /* Скругленный угол */
+    transition: border 0.3s; /* Плавный переход */
+}
+
+.icon.selected {
+    border-color: #007bff; /* Цвет рамки для выбранной иконки */
+}

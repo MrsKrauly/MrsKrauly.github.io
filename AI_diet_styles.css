@@ -1,0 +1,82 @@
+/* Общие стили */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4; /* Светлый фон */
+    color: #333; /* Темный текст */
+}
+
+.container {
+    max-width: 600px; /* Максимальная ширина контейнера */
+    margin: 50px auto; /* Центрирование по горизонтали */
+    padding: 20px; /* Поля вокруг содержимого */
+    background-color: white; /* Белый фон для контейнера */
+    border-radius: 10px; /* Закругленные углы */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Тень для контейнера */
+}
+
+h1 {
+    font-size: 24px; /* Размер заголовка */
+    margin-bottom: 10px; /* Отступ снизу */
+    text-align: center; /* Центрирование заголовка */
+}
+
+p {
+    text-align: center; /* Центрирование текста */
+    margin-bottom: 20px; /* Отступ снизу */
+}
+
+/* Стили формы */
+form {
+    display: flex; /* Flexbox для вертикального расположения полей */
+    flex-direction: column; /* Вертикальное направление */
+}
+
+input[type="text"],
+select {
+    padding: 12px; /* Поля внутри полей ввода */
+    margin-bottom: 15px; /* Отступ снизу */
+    border: 1px solid #ccc; /* Серая рамка */
+    border-radius: 5px; /* Закругленные углы */
+    font-size: 16px; /* Размер шрифта */
+    transition: border-color 0.2s; /* Плавный переход цвета рамки */
+}
+
+input[type="text"]:focus,
+select:focus {
+    border-color: #ff0000; /* Цвет рамки при фокусе */
+    outline: none; /* Убираємо стандартную рамку браузера */
+}
+
+/* Стили кнопки */
+.btn {
+    background-color: #ff0000; /* Красный фон */
+    color: white; /* Белый текст */
+    border: none; /* Убираем рамки */
+    border-radius: 5px; /* Закругленные углы */
+    padding: 15px; /* Поля внутри кнопки */
+    font-size: 16px; /* Размер шрифта кнопки */
+    cursor: pointer; /* Курсор при наведении */
+    transition: background-color 0.3s; /* Плавный переход цвета */
+}
+
+.btn:hover {
+    background-color: #e60000; /* Темнее красный при наведении */
+}
+
+/* Стили для результатов */
+#result {
+    margin-top: 20px; /* Отступ сверху */
+    padding: 20px; /* Поля вокруг результата */
+    background-color: #ebebeb; /* Серый фон */
+    border-radius: 5px; /* Закругленные углы */
+    text-align: center; /* Центрирование текста */
+}
+.result-container {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f0f0f0; /* Цвет фона для результата */
+    border: 1px solid #ddd; /* Рамка вокруг результата */
+    border-radius: 5px; /* Закругление углов */
+    display: none; /* Скрываем контейнер изначально */
+}

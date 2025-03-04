@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рассчитать диету с помощью ИИ</title>
+    <link rel="stylesheet" href="AI_diet_styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Рассчитать диету с помощью ИИ (beta)</h1>
+        <p>Заполните форму, чтобы получить рекомендации по диете:</p>
+        <form id="diet-form">
+            <input type="text" placeholder="Возраст" required>
+            <input type="text" placeholder="Вес (кг)" required>
+            <input type="text" placeholder="Рост (см)" required>
+            <select required>
+                <option value="">Выберите уровень активности</option>
+                <option value="низкий">Низкий</option>
+                <option value="умеренный">Умеренный</option>
+                <option value="высокий">Высокий</option>
+            </select>
+            <button type="submit" class="btn">Получить диету</button>
+        </form>
+
+        <div id="result" class="result-container" style="display: none;"></div> <!-- Контейнер для результата -->
+    </div>
+
+    <script>
+        document.getElementById("diet-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Предотвращаем перезагрузку страницы
+
+            // Получаем данные из формы
+            const age = parseInt(document.querySelector('input[placeholder="Возраст"]').value);
+            const weight = parseFloat(document.querySelector('input[placeholder="Вес (кг)"]').value);
+            const height = parseFloat(document.querySelector('input[placeholder="Рост (см)"]').value);
+            const activityLevel = document.querySelector('select').value;
+
+            // Простая логика для расчета суточной калорийности
+            let bmr;
+            if (age && weight && height) {
+                bmr = 10 * weight + 6.25 * height - 5 * age + 5; // Формула Mifflin-St Jeor для мужчин
+                if (activityLevel === "умеренный") {
+                    bmr *= 1.55;
+                } else if (activityLevel === "высокий") {
+                    bmr *= 1.725;
+                } // Низкий уровень активности не меняет BMR
+
+                // Формируем результат
+                const dietPlan = `Ваша рекомендованная диета:
+                                  ${Math.round(bmr)} калорий в день. Акцент на белки и овощи.`;
+                
+                // Выводим результат
+                const resultContainer = document.getElementById("result");
+                resultContainer.innerHTML = dietPlan;
+                resultContainer.style.display = "block"; // Показываем контейнер с результатом
+            } else {
+                alert("Пожалуйста, введите корректные данные.");
+            }
+        });
+    </script>
+</body>
+</html>

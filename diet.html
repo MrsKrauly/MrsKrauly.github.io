@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Диета | AMDIET</title>
+    <link rel="stylesheet" href="diet_styles.css">
+</head>
+<body>
+    <header>
+        <h1>Ваша диета</h1>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Профиль</a></li>
+                <li><a href="mainpage.html">Главная</a></li>
+                <li><a href="#logout" class="btn">Выйти</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="diet-calculator">
+        <form id="diet-form" class="contact-form">
+            <input type="number" placeholder="Ваш возраст" required>
+            <input type="number" placeholder="Ваш вес (кг)" required>
+            <input type="number" placeholder="Ваш рост (см)" required>
+            <select required>
+                <option value="" disabled selected>Уровень физической активности</option>
+                <option value="1">Малоподвижный образ жизни</option>
+                <option value="2">Умеренные физические нагрузки</option>
+                <option value="3">Активные физические нагрузки</option>
+            </select>
+            <button type="submit" class="btn">Рассчитать диету</button>
+        </form>
+
+        <div id="result" class="result" style="display:none;">
+            <h2>Рекомендация по диете</h2>
+            <p id="diet-recommendation"></p>
+        </div>
+    </section>
+
+    <script src="script_diet.js"></script>
+</body>
+</html>
